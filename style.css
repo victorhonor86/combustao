@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color:white
+}
+
+#seletor {
+
+    background-color: orange;
+    color:black
+}
+
+#calculador {
+
+    background-color: red;
+    color:black
+}
+#titulo {
+
+    background-color: yellow;
+    color:black
+}
+#formulas {
+
+    background-color: red;
+    color:black
+}
+
+#opcoes {
+    background-color: green;
+    color:black
+
+}
+

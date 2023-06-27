@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="style.css" media="screen">
+<title>Combustão</title>
+</head>
+<body>
+    <div id="titulo"><h3>Combustão Completa</h3></div>
+
+
+<div id="opcoes">
+<h3>Escolha entre digitar os valores dos átomos do combustível em <b>calculador</b>
+ou escolher entre os combustíveis para gerar a fórmula de combustão completa em <b>seletor</b>.</h3>
+
+</div>
+
+
+    <div id="calculador">
+        <h3>Digite os valores para cada elemento químico:</h3>
+      
+          <h2>C<input id="inCarbono" type="text" value="0" style="width: 20px; height:20px; font-size:20px">
+              H<input id="inHidrogenio" type="text" value="0" style="width: 20px; height:20px; font-size:20px">
+              O<input id="inOxigenio" type="text" value="0" style="width: 20px; height:20px; font-size:20px"> 
+              + <span id="oxigenio">teste</span>O<sub>2</sub><br>⇩<br>
+              
+              
+              <span id="carbono">teste</span>CO<sub>2</sub> +
+              <span id="hidrogenio">teste</span>H<sub>2</sub>O
+              
+              </h2>
+      </div>
+      <div id="seletor">    
+        
+        
+        <h3>Escolha um Combustível:</h3>
+        <select>
+        <option value="a1">NENHUM</option>
+        <option value="a2">Gás Hidrogênio (H2)</option>
+        <option value="a3">Etanol (C2H6O)</option>
+        <option value="a4">Gasolina (C8H18)</option>
+        <option value="a5">Óleo Diésel (C8H17)</option>
+        <option value="a6">Celulose (C6H10O5)</option>
+        <option value="a7">Metano (CH4)</option>
+        <option value="a8">Propano (C3H6)</option>
+      </select>
+      
+  </div>
+  
+  
+  
+      
+        
+        <div class="formulas" id="f1">
+         <br>
+          Fórmula Genérica
+          <br>
+          Combustível + <b>Z</b>O<sub>2</sub> ⇨ <b>X</b>CO<sub>2</sub> + <b>Y</b>H<sub>2</sub>O
+        </div>
+        
+        <div class="formulas" id="f2">
+         <br>
+          H<sub>2</sub> + <b>0.5</b>O<sub>2</sub> ⇨ <b>1</b>H<sub>2</sub>O
+        </div>
+        
+        <div class="formulas" id="f3">
+          <br>
+          C<sub>2</sub>H<sub>6</sub>O + <b>3</b>O<sub>2</sub> ⇨ <b>2</b>CO<sub>2</sub> + <b>3</b>H<sub>2</sub>O
+        </div>
+        
+        <div class="formulas" id="f4">
+          <br>
+          <b>2</b>C<sub>8</sub>H<sub>18</sub> + <b>25</b>O<sub>2</sub> ⇨ <b>16</b>CO<sub>2</sub> + <b>18</b>H<sub>2</sub>O
+        </div>
+  
+        <div class="formulas" id="f5">
+          <br>
+          <b>4</b>C<sub>8</sub>H<sub>17</sub> + <b>49</b>O<sub>2</sub> ⇨ <b>32</b>CO<sub>2</sub> + <b>34</b>H<sub>2</sub>O
+        </div>
+  
+        <div class="formulas" id="f6">
+          <br>
+          C<sub>6</sub>H<sub>10</sub>O<sub>5</sub> + <b>6</b>O<sub>2</sub> ⇨ <b>6</b>CO<sub>2</sub> + <b>5</b>H<sub>2</sub>O
+        </div>
+        
+        <div class="formulas" id="f7">
+          <br>
+          CH<sub>4</sub> + <b>2</b>O<sub>2</sub> ⇨ <b>1</b>CO<sub>2</sub> + <b>2</b>H<sub>2</sub>O
+        </div>
+  
+        <div class="formulas" id="f8">
+         <br>
+          <b>2</b>C<sub>3</sub>H<sub>6</sub> + <b>9</b>O<sub>2</sub> ⇨ <b>6</b>CO<sub>2</sub> + <b>6</b>H<sub>2</sub>O
+        </div>
+  
+
+      
+      
+
+
+
+
+
+      <br><br>
+      <button id="hide">Seletor</button>
+      <button id="show">Calculador</button>
+        
+        <script>
+            var valueC;
+            var valueH;
+            var valueO;
+            
+            
+            $(document).ready(function(){
+                $("#calculador").hide();
+                $('.formulas').hide();
+                $("#seletor").hide();
+
+  $("#hide").click(function(){
+    $("#calculador").hide();
+    $("#seletor").show();
+    $("#opcoes").hide();
+  });
+  $("#show").click(function(){
+    $("#calculador").show();
+    $('.formulas').hide();
+    $("#seletor").hide();
+    $("#opcoes").hide();
+  });
+});
+
+        $( "#inCarbono" )
+          .on( "keyup", function() {
+            valueC = $( this ).val();
+            $( "#carbono" ).text( valueC );
+            $( "#hidrogenio" ).text( valueH/2 );
+            $( "#oxigenio" ).text( (2*valueC +(valueH/2)-valueO)/2 );
+          } )
+          .trigger( "keyup" );
+        $( "#inHidrogenio" )
+          .on( "keyup", function() {
+            valueH = $( this ).val();
+            $( "#carbono" ).text( valueC );
+            $( "#hidrogenio" ).text( valueH/2 );
+            $( "#oxigenio" ).text( (2*valueC +(valueH/2)-valueO)/2 );
+          } )
+          .trigger( "keyup" );
+        $( "#inOxigenio" )
+          .on( "keyup", function() {
+            valueO = $( this ).val();
+            $( "#carbono" ).text( valueC );
+            $( "#hidrogenio" ).text( valueH/2 );
+            $( "#oxigenio" ).text( (2*valueC +(valueH/2)-valueO)/2 );
+          } )
+          .trigger( "keyup" );
+
+          $('.formulas').hide();
+  
+
+        </script>
+        
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+  $( "select" ).on( "change", function() {
+    //console.log($('select')[0].value);
+    
+    $('.formulas').hide();
+    if($('select')[0].value == 'a1') $('#f1').show();
+    if($('select')[0].value == 'a2') $('#f2').show();
+    if($('select')[0].value == 'a3') $('#f3').show();
+    if($('select')[0].value == 'a4') $('#f4').show();
+    if($('select')[0].value == 'a5') $('#f5').show();
+    if($('select')[0].value == 'a6') $('#f6').show();
+    if($('select')[0].value == 'a7') $('#f7').show();
+    if($('select')[0].value == 'a8') $('#f8').show();
+      
+    
+  });
+</script>
+
+
+
+
+    </body>
+</html>
