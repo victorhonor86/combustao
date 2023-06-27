@@ -1,6 +1,6 @@
 body {
-    background-color: white;
-    color:black
+    background-color: black;
+    color:white
 }
 
 #seletor {
@@ -19,7 +19,7 @@ body {
     background-color: yellow;
     color:black
 }
-#formulas {
+#f1,#f2,#f3,#f4,#f5,#f6,#f7,#f8 {
 
     background-color: red;
     color:black
